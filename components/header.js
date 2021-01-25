@@ -1,11 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import {faCampground} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCampground, faPen} from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
     return (
         <header>
             <Navitem href="/" icon={faCampground}>home</Navitem>
+            <Navitem href="/blog" icon={faPen}>blog</Navitem>
         </header>
     )
 }
