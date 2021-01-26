@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Layout from '../../components/layout'
 import Remark from 'remark'
 import ReactMarkdown from 'react-markdown'
+var dayjs = require('dayjs')
 
 
 const PostSlug = ({ post }) => {
@@ -24,7 +25,7 @@ const PostSlug = ({ post }) => {
                     height={700} />
                 <div className="post-details">
                     <p>by: {author.name}</p>
-                    <p>published at: {publishedAt}</p>
+                    <p>published at: {dayjs(publishedAt).format('YYYY MM-DD')}</p>
                     <ul>
                         {tags.map(tag => (
                             <li key={tag}>{tag}</li>
