@@ -1,5 +1,6 @@
 import { GraphQLClient } from "graphql-request"
 import Image from 'next/image'
+import Head from 'next/head'
 import Layout from '../components/layout'
 
 const About = ({ authors }) => {
@@ -7,6 +8,9 @@ const About = ({ authors }) => {
     return (
         <Layout>
             <div>
+                <Head>
+                    <title>About</title>
+                </Head>
                 {
                     authors.map(author => {
                         return (

@@ -1,11 +1,15 @@
 import { GraphQLClient } from "graphql-request"
 import BlogCard from '../components/cards/blogcard'
 import Layout from '../components/layout'
+import Head from 'next/head'
 
 
 const AllPosts = ({ posts }) => {
     return (
         <>
+            <Head>
+                <title>All Posts</title>
+            </Head>
             {posts.map(post => (
                 <BlogCard key={post.id} items={post} />
             ))}

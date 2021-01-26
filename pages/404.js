@@ -4,6 +4,11 @@ import Link from 'next/link'
 const NotFound = () => {
     return (
         <div>
+            <Head>
+                <meta />
+                <title>NotFound</title>
+            </Head>
+            {/* TODO: beautify 404 page */}
             The page you were looking for doesn't exist
         </div>
     )

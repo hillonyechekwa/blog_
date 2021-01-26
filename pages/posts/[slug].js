@@ -13,6 +13,9 @@ const PostSlug = ({ post }) => {
     return (
         <Layout>
             <div>
+                <Head>
+                    <title>{title}</title>
+                </Head>
                 <h1>{title}</h1>
                 <Image
                     src={coverImage.url}
@@ -34,6 +37,7 @@ const PostSlug = ({ post }) => {
                 </article>
 
                 <hr />
+                {/* TODO: add commenting system */}
             </div >
         </Layout>
     )
