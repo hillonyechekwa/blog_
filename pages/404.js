@@ -1,3 +1,6 @@
+import Head from 'next/head'
+import Link from 'next/link'
+
 const NotFound = () => {
     return (
         <div>
@@ -7,6 +10,6 @@ const NotFound = () => {
 }
 
 
-export default NotFound 
+export default NotFound
 
 

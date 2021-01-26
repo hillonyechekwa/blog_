@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header>
             <Navitem href="/" icon={faCampground}>home</Navitem>
-            <Navitem href="/blog" icon={faPen}>blog</Navitem>
+            <Navitem href="/allposts" icon={faPen}>posts</Navitem>
             <Navitem href="/about" icon={faUserNinja}>about</Navitem>
         </header>
     )

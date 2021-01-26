@@ -5,7 +5,7 @@ const Card = ({ items }) => {
 
     const { title, slug, coverImage, author, excerpt } = items
     return (
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/post/${slug}`}>
             <div>
                 <Image
                     src={coverImage.url}

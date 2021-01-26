@@ -1,15 +1,15 @@
 import { GraphQLClient } from "graphql-request"
-import BlogCard from '../../components/cards/blogcard'
-import Layout from '../../components/layout'
+import BlogCard from '../components/cards/blogcard'
+import Layout from '../components/layout'
 
 
-const Blog = ({ posts }) => {
+const AllPosts = ({ posts }) => {
     return (
-        <div>
+        <>
             {posts.map(post => (
                 <BlogCard key={post.id} items={post} />
             ))}
-        </div>
+        </>
     )
 }
 
@@ -47,5 +47,5 @@ export async function getStaticProps() {
 }
 
 
-export default Blog
+export default AllPosts
 
