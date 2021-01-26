@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { GraphQLClient } from 'graphql-request'
-import Card from '../components/card'
+import Card from '../components/cards/card'
 
 const Index = ({ posts }) => {
     return (

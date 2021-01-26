@@ -1,32 +1,35 @@
 import { GraphQLClient } from "graphql-request"
 import Image from 'next/image'
+import Layout from '../components/layout'
 
 const About = ({ authors }) => {
 
     return (
-        <div>
-            {
-                authors.map(author => {
-                    return (
-                        <div key={author}>
-                            <h1>{author.name}</h1>
-                            <Image
-                                src={author.avatar.url}
-                                alt="author avatar"
-                                width={270}
-                                height={400}
-                            />
-                            <p>{author.bibliography}</p>
-                            <div>{author.links.map(link => {
-                                return (
-                                    <p key={link}>{link}</p>
-                                )
-                            })}</div>
-                        </div>
-                    )
-                })
-            }
-        </div>
+        <Layout>
+            <div>
+                {
+                    authors.map(author => {
+                        return (
+                            <div key={author}>
+                                <h1>{author.name}</h1>
+                                <Image
+                                    src={author.avatar.url}
+                                    alt="author avatar"
+                                    width={270}
+                                    height={400}
+                                />
+                                <p>{author.bibliography}</p>
+                                <div>{author.links.map(link => {
+                                    return (
+                                        <p key={link}>{link}</p>
+                                    )
+                                })}</div>
+                            </div>
+                        )
+                    })
+                }
+            </div >
+        </Layout>
     )
 }
 
