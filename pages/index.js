@@ -1,36 +1,45 @@
+import Head from 'next/head'
 import Layout from '../components/layout'
-import { GraphQlClient } from 'graphql-request'
+import { GraphQLClient } from 'graphql-request'
+import Card from '../components/card'
 
-const Index = () => {
+const Index = ({ posts }) => {
     return (
         <Layout>
+            <Head>
+                <title>Home</title>
+            </Head>
             <div>
-                This is the body
-        </div>
+                <h1>Featured Posts</h1>
+                <section className="featured-posts">
+                    {posts.map(post => (
+                        <Card key={post.id} items={post} />
+                    ))}
+                </section>
+            </div>
         </Layout>
     )
 }
 
 export async function getStaticProps() {
-    const graphcms = new GraphQlClient('process.env.GRAPHCMS_API')
+    const graphcms = new GraphQLClient(process.env.GRAPHCMS_API)
     const { posts } = await graphcms.request(
         `
         {
-            posts {
-                    title
-                    slug
-                    tags
-                    createdAt
-                    coverImage {
-                        url
-                    }
-                    author {
-                        name
-                    }
-                    id
-                    content {
-                        markdown
+            posts(orderBy: id_ASC, last: 3) {
+                title
+                slug
+                coverImage {
+                     url
                 }
+                 author {
+                     name
+                }
+                id
+                content {
+                     markdown
+                }
+                excerpt
             }
         }
 
