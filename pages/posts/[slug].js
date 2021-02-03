@@ -22,7 +22,8 @@ const PostSlug = ({ post }) => {
                     src={coverImage.url}
                     alt="blogpost cover"
                     width={1280}
-                    height={700} />
+                    height={700}
+                />
                 <div className="post-details">
                     <p>by: {author.name}</p>
                     <p>published at: {dayjs(publishedAt).format('YYYY MM-DD')}</p>
