@@ -1,16 +1,10 @@
 import { GraphQLClient } from "graphql-request"
 import Image from 'next/image'
-import Head from 'next/head'
-import Layout from '../components/layout'
 
-const About = ({ authors }) => {
+const Author = ({authors}) =>{
 
     return (
-        <Layout>
-            <div>
-                <Head>
-                    <title>About</title>
-                </Head>
+        <div>
                 {
                     authors.map(author => {
                         return (
@@ -19,7 +13,7 @@ const About = ({ authors }) => {
                                 <Image
                                     src={author.avatar.url}
                                     alt="author avatar"
-                                    width={200}
+                                    width={230}
                                     height={300}
                                 />
                                 <p>{author.bibliography}</p>
@@ -32,8 +26,7 @@ const About = ({ authors }) => {
                         )
                     })
                 }
-            </div >
-        </Layout>
+            </div>
     )
 }
 
@@ -43,7 +36,7 @@ const graphcms = new GraphQLClient(process.env.GRAPHCMS_API)
 export async function getStaticProps() {
     const { authors } = await graphcms.request(
         `
-            query AboutPageQuery {
+             {
                 authors{
                     id
                     name
@@ -62,8 +55,9 @@ export async function getStaticProps() {
             authors
         }
     }
+
 }
 
 
 
-export default About
+export default Author

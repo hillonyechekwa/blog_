@@ -3,6 +3,7 @@
 @import 'menu';
 @import 'hamburger';
 @import 'card';
+@import 'about';
 @import 'footer';
 
 
@@ -78,10 +79,3 @@
     grid-area: 😎;
 }
 
-
-//about styles
-.aboutwrapper{
-    padding: 5px;
-    // TODO: fix image bg
-    // TRY: upload img to cloudinary and remove bg b4 dl
-}

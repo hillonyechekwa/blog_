@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Layout from '../components/layout';
 import { GraphQLClient } from 'graphql-request';
 import Card from '../components/cards/card';
+import Button from '../components/button';
+import Author from '../components/author';
+
 
 const Index = ({ posts }) => {
 	return (
@@ -9,10 +12,11 @@ const Index = ({ posts }) => {
 			<Head>
 				<title>AHFOC</title>
 			</Head>
-			<div className="home-wrapper">
-				<h1>Featured Posts</h1>
-				<section className="featured-posts">{posts.map((post) => <Card key={post.id} items={post} />)}</section>
-			</div>
+				<div className="home-wrapper">
+					<h1>Featured Posts</h1>
+					<section className="featured-posts">{posts.map((post) => <Card key={post.id} items={post} />)}</section>				
+					<Author />
+				</div>
 		</Layout>
 	);
 };
@@ -24,12 +28,12 @@ export async function getStaticProps() {
         {
             posts(orderBy: id_ASC, last: 3) {
                 title
-                slug
+                 slug
                 coverImage {
                      url
                 }
                  author {
-                     name
+						name
                 }
                 id
                 content {
@@ -42,6 +46,8 @@ export async function getStaticProps() {
 
        `
 	);
+		
+
 
 	return {
 		props: {
