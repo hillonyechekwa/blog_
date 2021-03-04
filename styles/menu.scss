@@ -1,0 +1,29 @@
+.page-menu{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 200%;
+    background-color: global.$black;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: start space-evenly;
+    align-items: center;
+    visibility: hidden;
+}
+
+
+.nav-item{
+    color: global.$white;
+    font-size: global.$Heading1;
+    font-family: global.$family;
+    text-transform: capitalize;
+    position: relative;
+    top: 10%;
+    padding-bottom: 20px;
+}
+
+a.nav-item{
+    text-decoration: none;
+}
