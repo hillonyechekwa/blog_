@@ -14,13 +14,13 @@ const About = ({ authors }) => {
                 {
                     authors.map(author => {
                         return (
-                            <div key={author}>
+                            <div className="aboutwrapper" key={author}>
                                 <h1>{author.name}</h1>
                                 <Image
                                     src={author.avatar.url}
                                     alt="author avatar"
-                                    width={270}
-                                    height={400}
+                                    width={200}
+                                    height={300}
                                 />
                                 <p>{author.bibliography}</p>
                                 <div>{author.links.map(link => {
