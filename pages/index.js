@@ -1,30 +1,26 @@
-import Head from 'next/head'
-import Layout from '../components/layout'
-import { GraphQLClient } from 'graphql-request'
-import Card from '../components/cards/card'
+import Head from 'next/head';
+import Layout from '../components/layout';
+import { GraphQLClient } from 'graphql-request';
+import Card from '../components/cards/card';
 
 const Index = ({ posts }) => {
-    return (
-        <Layout>
-            <Head>
-                <title>Home</title>
-            </Head>
-            <div>
-                <h1>Featured Posts</h1>
-                <section className="featured-posts">
-                    {posts.map(post => (
-                        <Card key={post.id} items={post} />
-                    ))}
-                </section>
-            </div>
-        </Layout>
-    )
-}
+	return (
+		<Layout>
+			<Head>
+				<title>AHFOC</title>
+			</Head>
+			<div className="home-wrapper">
+				<h1>Featured Posts</h1>
+				<section className="featured-posts">{posts.map((post) => <Card key={post.id} items={post} />)}</section>
+			</div>
+		</Layout>
+	);
+};
 
 export async function getStaticProps() {
-    const graphcms = new GraphQLClient(process.env.GRAPHCMS_API)
-    const { posts } = await graphcms.request(
-        `
+	const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
+	const { posts } = await graphcms.request(
+		`
         {
             posts(orderBy: id_ASC, last: 3) {
                 title
@@ -40,19 +36,18 @@ export async function getStaticProps() {
                      markdown
                 }
                 excerpt
+                tags
             }
         }
 
        `
-    )
+	);
 
-    return {
-        props: {
-            posts
-        }
-    }
+	return {
+		props: {
+			posts
+		}
+	};
 }
 
-
-export default Index
-
+export default Index;

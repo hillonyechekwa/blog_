@@ -1,0 +1,29 @@
+.card{
+    justify-content:center;
+    text-align: left;
+    font-family: global.$family;
+    margin-bottom: 30px;
+    color: global.$white;
+    cursor: pointer;
+}
+
+.card h2{
+    font-size: global.$Heading3;
+    font-weight: global.$Headline;
+    color: global.$primary-light;
+    margin-top: 20px;
+}
+
+.card ul{
+    list-style: none;
+    display: flex;
+    justify-content: first space-around;
+    li{
+        color: global.$tertiary;
+        padding-left: 10px;
+    }
+}
+
+.card p{
+    font-size: 1.2rem;
+}
