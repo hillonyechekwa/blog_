@@ -12,8 +12,8 @@
     .bun{
         width: 100px;
         height: 20px;
-        background-color: global.$tertiary-dark;
-        border-radius: 2.5px;
+        background-color: lighten(global.$primary, 10%);
+        // border-radius: 2.5px;
         margin-bottom: 5px;
     }
 }

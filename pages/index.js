@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import { GraphQLClient } from 'graphql-request';
 import Card from '../components/cards/card';
 import Button from '../components/button';
-import Author from '../components/author';
 
 
 const Index = ({ posts }) => {
@@ -13,9 +12,13 @@ const Index = ({ posts }) => {
 				<title>AHFOC</title>
 			</Head>
 				<div className="home-wrapper">
-					<h1>Featured Posts</h1>
+				<svg id="featured" viewBox="0 0 500 200">
+					<text id="featuredtext">
+						<tspan x="0" y="0" id="subtext1">Featured</tspan>
+						<tspan x="0" y="90" id="subtext2">Posts</tspan>
+					</text>
+					</svg>
 					<section className="featured-posts">{posts.map((post) => <Card key={post.id} items={post} />)}</section>				
-					<Author />
 				</div>
 		</Layout>
 	);
@@ -29,9 +32,6 @@ export async function getStaticProps() {
             posts(orderBy: id_ASC, last: 3) {
                 title
                  slug
-                coverImage {
-                     url
-                }
                  author {
 						name
                 }

@@ -1,19 +1,18 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Card = ({ items }) => {
-	const { title, slug, coverImage, author, excerpt, tags } = items;
+	const { title, slug, author, excerpt, tags } = items;
 
 	return (
-		<Link className="cardlink" href={`/posts/${slug}`}>
-			<div className="card">
-				<Image className="card-img" src={coverImage.url} alt="thumbnail" layout="responsive" width={500} height={250} />
-				<h2>{title}</h2>
-				<small>{author.name}</small>
-				<p>{excerpt}</p>
-				<ul>{tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-			</div>
-		</Link>
+		<Link className="cardlink" passHref href={`/posts/${slug}`}>
+		<svg id="card" viewBox="0 0 400 200">
+				<text id="card-text">
+					<tspan id="title" x="-300" y="100">{title}</tspan>
+					<tspan id="author" x="-300" y="150">{author.name}</tspan>
+					<tspan id="excerpt" x="-300" y="170">{excerpt}</tspan>
+				</text>
+			</svg>
+			</Link>
 	);
 };
 
