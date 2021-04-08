@@ -20,6 +20,10 @@
     }
 }
 
+#card:hover{
+    background-color: lighten(global.$primary-light, 20%);
+}
+
 // .card h2{
 //     font-size: global.$Heading3;
 //     font-weight: global.$Headline;
