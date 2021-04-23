@@ -6,14 +6,16 @@ import Head from 'next/head'
 
 const AllPosts = ({ posts }) => {
     return (
-        <>
+        <Layout>
             <Head>
                 <title>All Posts</title>
             </Head>
+            <div className="post-wrapper" >
             {posts.map(post => (
                 <BlogCard key={post.id} items={post} />
             ))}
-        </>
+                </div>
+        </Layout>
     )
 }
 

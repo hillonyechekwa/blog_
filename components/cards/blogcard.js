@@ -5,13 +5,15 @@ const BlogCard = ({ items }) => {
 
     const { title, slug, coverImage, author, excerpt } = items
     return (
-        <Link href={`/posts/${slug}`}>
-            <div>
+        <Link passHref href={`/posts/${slug}`}>
+            <div className="blog-card">
                 <Image
                     src={coverImage.url}
                     alt="thumbnail"
                     width={200}
                     height={100}
+                    layout="responsive"
+                    className="blogcardimg"
                 />
                 <h2>{title}</h2>
                 <p>{author.name}</p>

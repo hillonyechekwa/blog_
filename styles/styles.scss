@@ -2,6 +2,9 @@
 @import 'header';
 @import 'menu';
 @import 'hamburger';
+@import 'posts';
+@import 'blogcard';
+@import 'mainpost';
 @import 'card';
 @import 'about';
 @import 'footer';
@@ -94,4 +97,11 @@
 .notfoundwrapper:last-child{
     grid-area: 😎;
 }
+
+
+
+
+
+
+
 

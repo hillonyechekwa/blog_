@@ -13,28 +13,30 @@ const PostSlug = ({ post }) => {
 
     return (
         <Layout>
-            <div>
+            <div className="article-wrapper">
                 <Head>
                     <title>{title}</title>
                 </Head>
-                <h1>{title}</h1>
                 <Image
                     src={coverImage.url}
                     alt="blogpost cover"
-                    width={1280}
-                    height={700}
+                    className="articleimg"
+                    width={1000}
+                    height={400}
+                    layout="responsive"
                 />
+                <h1>{title}</h1>
                 <div className="post-details">
-                    <p>by: {author.name}</p>
-                    <p>published at: {dayjs(publishedAt).format('YYYY MM-DD')}</p>
+                    <p className="author">by: {author.name}</p>
+                    <p className="pub-time">published at: {dayjs(publishedAt).format('YYYY MM-DD')}</p>
                     <ul>
                         {tags.map(tag => (
-                            <li key={tag}>{tag}</li>
+                            <li className="tag" key={tag}>{tag}</li>
                         ))}
                     </ul>
                 </div>
 
-                <article>
+                <article className="post-content">
                     <ReactMarkdown children={content.markdown} />
                 </article>
 

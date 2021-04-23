@@ -1,0 +1,43 @@
+.article-wrapper{
+    padding: 5px;
+    .articleimg{
+        margin-left: 10%;
+    }
+    h1{
+        font-family: global.$family;
+        font-size: 3rem;
+        margin-top: 5px;
+    }
+    .post-details{
+        font-size: 10px;
+        font-family: global.$family;
+        display: flex;
+        // justify-content: space-around;
+        justify-content: flex-start;
+        flex-basis: 1;
+        .author{
+            margin-right: 2px;
+            color: global.$secondary-dark;
+        }
+        .pub-time{
+            margin-right: 3px;
+        }
+        .tag{
+            color: global.$tertiary;
+            list-style: none;
+            margin-right: 2px;
+        }
+    }
+    
+}
+
+.post-content{
+    font-family: global.$family;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+
+
+

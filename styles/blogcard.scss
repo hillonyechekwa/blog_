@@ -1,0 +1,49 @@
+.blog-card{
+    display: grid;
+    font-family: global.$family;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: global.$primary;
+    .blogcardimg{
+        transition: all 4s ease-in-out 1s 2s;
+        margin-bottom: 20px;
+    }
+}
+
+.blog-card:hover{
+    .blogcardimg{
+        transform: scale(1.2);
+    }
+    color: global.$secondary-dark;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
