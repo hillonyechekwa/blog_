@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request"
 import Head from 'next/head'
 import Image from 'next/image'
-import Layout from '../../components/layout'
+import BlogLayout from '../../components/layouts/Blog'
 import Remark from 'remark'
 import ReactMarkdown from 'react-markdown'
 var dayjs = require('dayjs')
@@ -12,7 +12,7 @@ const PostSlug = ({ post }) => {
     const { title, tags, content, publishedAt, author, coverImage } = post
 
     return (
-        <Layout>
+        <BlogLayout>
             <div className="article-wrapper">
                 <Head>
                     <title>{title}</title>
@@ -43,9 +43,11 @@ const PostSlug = ({ post }) => {
                 <hr />
                 {/* TODO: add commenting system */}
             </div >
-        </Layout>
+            </BlogLayout>
     )
 }
+
+
 
 
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API)
@@ -111,7 +113,6 @@ export async function getStaticPaths() {
         fallback: false
     }
 }
-
 
 
 

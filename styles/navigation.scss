@@ -36,5 +36,11 @@
 .navscrolled{
     position: fixed;
     background-color: global.$tertiary-light;
-    transition: background-color 2s ease-out 1s;
+    transition: background-color 1s ease-out 1s;
+    z-index: 4;
+}
+
+
+.item-line{
+    position: absolute;
 }

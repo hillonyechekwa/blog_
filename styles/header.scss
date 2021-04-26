@@ -1,7 +1,49 @@
 .siteheader{
-    // background-color: global.$primary;
-    background-color: global.$secondary-dark;
-    height: 300px;
-    width: 80vw;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(0.25turn, global.$primary-dark, lighten(global.$tertiary, 10%));
+} 
+
+#site-title{
+    #text-wrapper{
+        font-family: global.$family;
+        font-size: 5rem;
+        font-weight: 700;
+        transform: matrix(1, 0, 0, 1, 0.7, -10);
+        #text-top{
+            text-transform: capitalize;
+            fill: darken(global.$secondary-dark, 10%);
+        }
+        #text-bottom{
+            text-transform: capitalize;
+            fill: darken(global.$secondary-dark, 10%);
+        }
+    }
 }
 
+
+.to-posts{
+    position: relative;
+    left: 80%;
+    bottom: 10%;
+    background: none;
+    border: none;
+    font-family: global.$family;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2px;
+    font-weight: 700;
+
+    a{
+        color: global.$primary;
+        text-decoration: none;
+    }
+
+}
+
+.to-posts:hover{
+    a{
+        color: global.$white;
+        transition: color .5s ease-in 1s;
+    }
+}

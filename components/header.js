@@ -1,24 +1,23 @@
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCampground, faPen, faUserNinja } from '@fortawesome/free-solid-svg-icons'
-// import Menu from './Menu'
-// import Hamburger from './Hamburger'
+
 
 const Header = () => {
     return (
         <header className="siteheader">
+                <svg id="site-title" viewBox="0 0 500 200">
+                    <text id="text-wrapper">
+                        <tspan id="text-top" x="10" y="100">
+                            A Head Full
+                        </tspan>
+                        <tspan id="text-bottom" x="10" y="200">
+                            Of Code
+                        </tspan>
+                    </text>
+            </svg>
+            {/* <div className="arrow-down"></div> */}
+            {/* TODO: Add button styles */}
+            <button className="to-posts"><Link href="/allposts"> Go to posts</Link> </button>
         </header>
-    )
-}
-
-export function Navitem({ children, icon, href = "#" }) {
-    return (
-        <Link href={href}>
-            <div className="nav-item">
-                <FontAwesomeIcon icon={icon} />
-                <span>{children}</span>
-            </div>
-        </Link>
     )
 }
 

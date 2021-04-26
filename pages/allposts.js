@@ -1,12 +1,13 @@
 import { GraphQLClient } from "graphql-request"
 import BlogCard from '../components/cards/blogcard'
-import Layout from '../components/layout'
+import MainLayout from '../components/layouts/MainLayout'
 import Head from 'next/head'
 
 
 const AllPosts = ({ posts }) => {
     return (
-        <Layout>
+        // <Layout>
+        <MainLayout>
             <Head>
                 <title>All Posts</title>
             </Head>
@@ -15,7 +16,7 @@ const AllPosts = ({ posts }) => {
                 <BlogCard key={post.id} items={post} />
             ))}
                 </div>
-        </Layout>
+        </MainLayout>
     )
 }
 

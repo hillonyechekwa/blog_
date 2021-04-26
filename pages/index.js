@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '../components/layout';
+import MainLayout from '../components/layouts/MainLayout'
 import { GraphQLClient } from 'graphql-request';
 import Card from '../components/cards/card';
 import Button from '../components/button';
@@ -7,7 +7,8 @@ import Button from '../components/button';
 
 const Index = ({ posts }) => {
 	return (
-		<Layout>
+		// <Layout>
+		<MainLayout>
 			<Head>
 				<title>AHFOC</title>
 			</Head>
@@ -20,7 +21,7 @@ const Index = ({ posts }) => {
 					</svg>
 					<section className="featured-posts">{posts.map((post) => <Card key={post.id} items={post} />)}</section>				
 				</div>
-		</Layout>
+		</MainLayout>
 	);
 };
 

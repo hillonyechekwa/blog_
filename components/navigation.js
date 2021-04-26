@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 
 const Navigation = () => {
     const [scrolled, setScrolled] = useState(false);
-    console.log(scrolled)
+
 
     useEffect(() => {
 
@@ -29,22 +29,14 @@ const Navigation = () => {
             <div className="Logo"></div>
             <ul className="navitems">
                 <li className="navitem">
+                    {/* TODO: add line interaction on hover */}
                     <Link href="/">Home</Link>
-                    {/* <svg className="" width="">
-                        <path d="" pathLength="1"/>
-                    </svg> */}
                 </li>
                 <li className="navitem">
-                    <Link href="/">Posts</Link>
-                    {/* <svg className="" width="">
-                        <path d="" pathLength="1"/>
-                    </svg> */}
+                    <Link href="/allposts">Posts</Link>
                 </li>
                 <li className="navitem">
                     <Link href="/">About</Link>
-                    {/* <svg className="" width="">
-                        <path d="" pathLength="1"/>
-                    </svg> */}
                 </li>
                 <li className="navitem">
                     <Link href="/">buymeacoffee</Link>
