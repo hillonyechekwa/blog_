@@ -1,11 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const gcmsLoader = ({ src, width }) => {
-    const relativeSrc = (src) => src.split('/').pop()
-
-    return `https://media.graphcms.com/resize=width:${width}/${relativeSrc(src)}`
-}
 
 const BlogCard = ({ items }) => {
 

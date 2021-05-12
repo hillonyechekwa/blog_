@@ -30,6 +30,8 @@ export async function getStaticProps() {
                     markdown
                 }
                 coverImage {
+                    height
+                    width
                     url
                 }
                     id

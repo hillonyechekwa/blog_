@@ -6,12 +6,6 @@ import Remark from 'remark'
 import ReactMarkdown from 'react-markdown'
 var dayjs = require('dayjs')
 
-const gcmsLoader = ({ src, width }) => {
-    const relativeSrc = (src) => src.split('/').pop()
-
-    return `https://media.graphcms.com/resize=width:${width}/${relativeSrc(src)}`
-}
-
 
 const PostSlug = ({ post }) => {
 
@@ -80,6 +74,8 @@ export async function getStaticProps({ params }) {
     }
     coverImage {
       url
+      height
+      width
     }
   }
 }
