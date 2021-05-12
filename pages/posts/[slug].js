@@ -18,7 +18,6 @@ const PostSlug = ({ post }) => {
                     <title>{title}</title>
                 </Head>
                 <Image
-                    loader={gcmsLoader}
                     src={coverImage.url}
                     alt="blogpost cover"
                     className="articleimg"

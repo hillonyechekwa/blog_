@@ -9,7 +9,6 @@ const BlogCard = ({ items }) => {
         <Link passHref href={`/posts/${slug}`}>
             <div className="blog-card">
                 <Image
-                    loader={gcmsLoader}
                     src={coverImage.url}
                     alt="thumbnail"
                     width={200}
