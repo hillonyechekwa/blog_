@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+const gcmsLoader = ({ src, width }) => {
+    const relativeSrc = (src) => src.split('/').pop()
+
+    return `https://media.graphcms.com/resize=width:${width}/${relativeSrc(src)}`
+}
+
 const BlogCard = ({ items }) => {
 
     const { title, slug, coverImage, author, excerpt } = items
@@ -8,6 +14,7 @@ const BlogCard = ({ items }) => {
         <Link passHref href={`/posts/${slug}`}>
             <div className="blog-card">
                 <Image
+                    loader={gcmsLoader}
                     src={coverImage.url}
                     alt="thumbnail"
                     width={200}

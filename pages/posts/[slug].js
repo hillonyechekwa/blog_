@@ -6,6 +6,12 @@ import Remark from 'remark'
 import ReactMarkdown from 'react-markdown'
 var dayjs = require('dayjs')
 
+const gcmsLoader = ({ src, width }) => {
+    const relativeSrc = (src) => src.split('/').pop()
+
+    return `https://media.graphcms.com/resize=width:${width}/${relativeSrc(src)}`
+}
+
 
 const PostSlug = ({ post }) => {
 
@@ -18,6 +24,7 @@ const PostSlug = ({ post }) => {
                     <title>{title}</title>
                 </Head>
                 <Image
+                    loader={gcmsLoader}
                     src={coverImage.url}
                     alt="blogpost cover"
                     className="articleimg"
